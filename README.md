@@ -18,6 +18,7 @@ The virtual machines of the clusters will be managed and deployed by karpenter. 
 ## Continous Integration and Continous Delivery
 For continous Integration and Continous Delivery, I am employing the Gitops approach.
 I developed a model pipeline that takes care of continous integration. Ultimately the end product of the pipeline is to create images with the appropriate tags.  Argocd, a kubernetes controller helps us with continous delivery. Argocd watches a file where kubernetes manifest is defined, it reconcils changes made to the file in the cluster.
+In the case of a failed deployment, rollbacks can be made via Argocd or reverting the previous commit made to the git repo housing the kubernetes manifest files. Also Cilium have capabalities to implement canary deployment that makes the impact of failed deployment minimal.
 
 ## Database Schemas
 
