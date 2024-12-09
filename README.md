@@ -23,6 +23,13 @@ I developed a model pipeline that takes care of continous integration. Ultimatel
 
 The database schema is managed declaratively. The database tables, and schemas can be defined in a kubernetes resource and applied to the mysql database server  using **Schemahero**. Schemahero is a kubernetes controller that helps in  managing database schema as kubernetes resources.
 
+## Observability
+Cilium leverages the power of ebpf to make available enormous metrics. With cilium we have access to metrics about our applications, dns, http etc out of box without any form of instrumentation. I wrote a terraform module for kube-prometheus-stack to harvest the telemetry data made available by cilium.
+
+## Security
+
+cilium also provides layer 3/4 and layer 7 network policy capabilities. This allows us define rules to allow only traffic that are necessary. Also with terragon we have runtime security that can alert us when malicious acitivity happens within our cluster.
+
 ## Deploying AWS Resources
 
 AWS resources are defined using terraform. And can be deployed following these steps:
