@@ -7,7 +7,7 @@
 
 ## Brief Overview
 
-Cilium CNI is a center piece of my architectural design. The design involves deploying two Kubernetes clusters, one in the primary region and the other in the failover region. Cilium acting as both a CNI and service mesh that joins the two clusters. Cilium takes care of routing traffic across clusters as oppose to using AWS Load Balancers. This design choice saves us a lot cost.
+Cilium CNI is a center piece of my architectural design. The design involves deploying two Kubernetes clusters, one in the primary region and the other in the failover region. Cilium acting as both a CNI and service mesh that joins the two clusters. Cilium takes care of routing traffic across clusters as oppose to using AWS Load Balancers. This design choice saves us a lot of cost.
 
 Also  Mysql database will be deployed in the primary region and a read replica in the failover region. Deploying a read replica also saves us cross region cost.
 
