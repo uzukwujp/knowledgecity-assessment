@@ -146,5 +146,13 @@ variable "db_username" {
     description = "database username"  
 }
 
+variable "schemahero_chart_version" {
+  type = string
+}
+
+variable "schemahero_custom_values" {
+  type = string
+}
+
 
 

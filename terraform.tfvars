@@ -47,6 +47,8 @@ db_instance_class          = "db.t3.micro"
 db_name                    = "knowledgecity"
 db_password                = "johnpaulz"
 db_username                = "johnpaulz"
+schemahero_chart_version   = "1.3.4"
+schemahero_custom_values   = "helm-values/schemahero_values.yaml"
 
 
 

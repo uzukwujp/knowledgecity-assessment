@@ -93,3 +93,10 @@ module "kube-prometheus-stack" {
   depends_on               = [module.eks_addons]  
 }
 
+module "schemahero" {
+  source                   = "./modules/schemahero"
+  schemahero_chart_version = var.schemahero_chart_version
+  schemahero_custom_values = var.schemahero_custom_values
+  depends_on               = [ module.eks_addons ]  
+}
+
