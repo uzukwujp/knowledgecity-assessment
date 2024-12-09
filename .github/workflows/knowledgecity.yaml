@@ -36,6 +36,7 @@ jobs:
 
   build-and-push-image:
     if: github.ref_name == 'main' || github.ref_name == 'staging'
+    needs: [require-approval]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -52,10 +53,9 @@ jobs:
       - name: Push Docker image
         run: |
           echo push docker image to container registry
-          
+
 
   require-approval:
-    needs: [build-and-push-image]
     if: github.ref_name == 'main' || github.ref_name == 'staging'
     runs-on: ubuntu-latest
     environment:
